@@ -7,12 +7,24 @@
 </head>
 <body>
     <header>
-        <h1>Student Registration Form</h1>
+        <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_2MAUOUi4uxcj6-JuMCYqenIXpc4D_porWw&s" height="50" width="50" alt="Silver Oak University">
+        
+        <h1>Silver Oak University</h1>
     </header>
+    <nav>
+        <a href="Home/">Home</a> |
+        <a href="Signup/">Sign Up</a> |
+        <a href="Singin/">Sign In</a> |
+        <a href="Contact/">Contact</a> |
+        <a href="AboutUs/">About Us</a>
+
+    </nav>
+    <br><br>
+    <h1>Student Registration Form</h1>
     <form>
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="enrollment">Enrollment :</label><br>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="enrollment">Enrollment :</label>
         <input type="text" id="enrollment" name="enrollment">
         <br><br>
         <label for="branch">Branch:</label>
@@ -21,15 +33,34 @@
         <option value="it">IT</option>
         <option value="ai-ml">AI-ML</option>
         <option value="cyber security">Cyber Security</option>
-        </select><br>
-        <label for="div">Division:</label><br>
+        </select>
+        <br><br>
+        <label for="div">Division:</label>
         <input type="text" id="div" name="div">
-        <br>
+        <br><br>
         <label for="gender">Gender:</label>
         <input type="radio" id="gender" name="gender" value="male">
-        <label for="male">Male</label><br>
+        <label for="male">Male</label>
         <input type="radio" id="gender" name="gender" value="female">
-        <label for="female">Female</label><br>
-    </form>
+        <label for="female">Female</label>
+        <br><br>
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile">
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+        <label for="photo">Photo Upload Here:</label>
+        <input type="file" id="photo" name="photo">
+        <br><br>
+        <label for="remarks">Remarks</label>
+        <input type="textarea" id="remarks" name="remarks">
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset">
+        </form>
 </body>
 </html>
