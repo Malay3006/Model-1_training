@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform Animation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hover-box {
+            background-color: #ff4757;
+            transition: transform 0.3s ease-in-out; 
+        }
+
+        .hover-box:hover {
+            transform: scale(1.15) rotate(10deg);
+        }
+
+        .pulse-rotate-box {
+            background-color: #2ed573;
+            animation: pulseAndRotate 3s infinite ease-in-out;
+        }
+        @keyframes pulseAndRotate {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: translateX(30px) scale(1.2) rotate(180deg);
+                background-color: #1e90ff; 
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box hover-box">
+        Hover Me
+    </div>
+
+    <div class="box pulse-rotate-box">
+        Automatic Loop
+    </div>
+
+</body>
+</html>

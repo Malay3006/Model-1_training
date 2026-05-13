@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Classes and Multiple Selectors</title>
+    <style>
+        .primary-text, .secondary-text {
+            font-family: 'Segoe UI', sans-serif;
+            padding: 10px;
+        }
+        .primary-text {
+            color: #0056b3;
+        }
+        .secondary-text {
+            color: #555555;
+        }
+        .bg-light {
+            background-color: #f0f0f0;
+        }
+        .border-rounded {
+            border-radius: 8px;
+        }
+        div h3{
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="primary-text bg-light border-rounded">
+        <h3>Primary Block</h3>
+        <p>This element combines three distinct classes.</p>
+    </div>
+
+    <br>
+
+    <div class="secondary-text bg-light">
+        <h3>Secondary Block</h3>
+        <p>This element shares the font, padding, and background, but has a different text color.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout with Semantic Tags</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .wrapper {
+            display: grid;
+            flex: 1;
+            grid-template-columns: 200px 1fr 200px;
+        }
+
+        
+        .left-sidebar {
+            background-color: #e2e8f0;
+            padding: 20px;
+            order: 1; 
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+            order: 2; 
+        }
+
+        .right-sidebar {
+            background-color: #cbd5e1;
+            padding: 20px;
+            order: 3; 
+        }
+        @media (max-width: 768px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+            }
+            .left-sidebar, main, .right-sidebar {
+                order: unset; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Website Header</h1>
+    </header>
+
+    <div class="wrapper">
+        
+        <main>
+            <h2>Main Content Area</h2>
+            <p>This is the primary area where your main article or web application content lives. Placing it first in the HTML is great for search engines and screen readers.</p>
+        </main>
+
+        <nav class="left-sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+        </nav>
+
+        <aside class="right-sidebar">
+            <h3>Sidebar</h3>
+            <p>Perfect for advertisements, related links, or secondary information widgets.</p>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Holy Grail Layout Example</p>
+    </footer>
+
+</body>
+</html>

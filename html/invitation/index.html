@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! ✨</title>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #fecb2f;
+            --bg-color: #fff5f5;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #ff8e8e);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            background: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .wishes-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        article {
+            background: #fdfbf7;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Happy Birthday, Noel! 🎉</h1>
+        <p>Wishing you a day filled with love, laughter, and endless joy.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Our Birthday Star</a></li>
+            <li><a href="#wishes">Wishes</a></li>
+            <li><a href="#gallery">Memory Lane</a></li>
+            <li><a href="#party">Party Details</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>Cheers to Another Beautiful Year! 🥂</h2>
+            <p>Today, we celebrate the incredible person you are. Thank you for bringing so much light, positivity, and inspiration into our lives. May this upcoming year unlock new opportunities, unforgettable adventures, and everything your heart desires.</p>
+            <blockquote>
+                "Count your age by friends, not years. Count your life by smiles, not tears." — John Lennon
+            </blockquote>
+        </section>
+
+        <section id="wishes">
+            <h2>Love & Wishes From Everyone</h2>
+            <div class="wishes-grid">
+                
+                <article>
+                    <h3>From Me</h3>
+                    <p>"Happy Birthday to my partner in crime! Thank you for always being there and making every moment a memorable one. Have the best day ever!"</p>
+                </article>
+
+                <article>
+                    <h3>From Friends </h3>
+                    <p>"Wishing you a year ahead full of success, good health, and immense happiness. We are so incredibly proud of everything you do!"</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Memory Lane 📸</h2>
+            <p>A glimpse into some of our absolute favorite moments together.</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div style="height: 150px; background: #ddd; display: grid; place-items: center;">
+                        <img src="https://via.placeholder.com/150" alt="Photo 1" style="max-width: 100%; height: auto;">
+                    </div>
+                    <p><small>The Epic Road Trip</small></p>
+                </div>
+                <div class="gallery-item">
+                    <div style="height: 150px; background: #ddd; display: grid; place-items: center;">[Photo 2]</div>
+                    <p><small>Late Night Conversations</small></p>
+                </div>
+                <div class="gallery-item">
+                    <div style="height: 150px; background: #ddd; display: grid; place-items: center;">[Photo 3]</div>
+                    <p><small>Celebrating Milestones</small></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="party">
+            <h2>Join the Celebration! 🎂</h2>
+            <p>If you're joining us to celebrate in person, here is everything you need to know:</p>
+            <ul>
+                <li><strong>Date:</strong> [Insert Date]</li>
+                <li><strong>Time:</strong> [Insert Time]</li>
+                <li><strong>Venue:</strong> [Insert Location / Virtual Link]</li>
+            </ul>
+        </section>
+        <section id="location">
+            <h2>Location</h2>
+            <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8732.107918408165!2d72.57029785500134!3d23.045824631116975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8461a2095f23%3A0xca272b244270caea!2sHyatt%20Regency%20Ahmedabad!5e0!3m2!1sen!2sin!4v1778647001018!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Made with ❤️ for [Name]'s Special Day.</p>
+        <p>&copy; 2026 Celebration Hub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
