@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Practical: Layer, Float & Media Query</title>
+    <style>
+        @layer base, theme, layout;
+
+        @layer base {
+            * {
+                box-sizing: border-box; 
+            }
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+                background-color: #f9f9f9;
+            }
+            h1 { text-align: center; }
+        }
+        @layer theme {
+            .card {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .header-area { background-color: #2c3e50; color: white; padding: 10px; border-radius: 8px; }
+        }
+        @layer layout {
+            .wrapper {
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+                overflow: hidden; 
+            }
+            .main-content {
+                float: left;
+                width: 68%; 
+                background-color: #ffffff;
+            }
+            .sidebar {
+                float: right;
+                width: 28%; 
+                background-color: #f1f1f1;
+            }
+            footer {
+                clear: both;
+                text-align: center;
+                padding: 20px;
+                margin-top: 20px;
+                border-top: 1px solid #ddd;
+            }
+        }
+        @media (max-width: 768px) {
+            .main-content, .sidebar {
+                float: none;  
+                width: 100%;  
+            }
+            .sidebar {
+                margin-top: 20px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-area card">
+        <h1>Advanced CSS Layout Demo</h1>
+    </header>
+    <div class="wrapper">
+        <section class="main-content card">
+            <h2>The Main Content</h2>
+            <p>This column uses <code>float: left</code> to sit on the left side of the screen on desktops. By using a width of 68%, we leave room for the sidebar.</p>
+            <p><strong>CSS Layers:</strong> The styles for this box are organized into layers to prevent naming conflicts and manage priority easily.</p>
+        </section>
+        <aside class="sidebar card">
+            <h3>Side Widget</h3>
+            <p>This uses <code>float: right</code>. On mobile devices, the Media Query will kick in and stack this below the main content.</p>
+        </aside>
+    </div>
+    <footer>
+        <p>CSS Practical &copy; 2026 - Layout Logic</p>
+    </footer>
+</body>
+</html>
