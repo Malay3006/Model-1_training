@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Popup Boxes</title>
+</head>
+<body>
+    <h2>The 3 JavaScript Popup Boxes</h2>
+    <button onclick="showAlert()">1. Alert Box</button> <br><br>
+    <button onclick="showConfirm()">2. Confirm Box</button> <br><br>
+    <button onclick="showPrompt()">3. Prompt Box</button>
+    <p id="result" style="font-weight: bold; margin-top: 20px;"></p>
+
+    <script>
+        
+function showAlert() {
+    alert("This is an Alert Box! It just gives information.");
+    document.getElementById("result").innerText = "You closed the Alert box.";
+}
+function showConfirm() {
+    let userChoice = confirm("Do you want to proceed? Click OK or Cancel.");
+    
+    if (userChoice === true) {
+        document.getElementById("result").innerText = "You clicked OK!";
+    } else {
+        document.getElementById("result").innerText = "You clicked Cancel!";
+    }
+}
+function showPrompt() {
+    let userName = prompt("Please enter your name:", "Guest");
+    
+    if (userName === null || userName === "") {
+        document.getElementById("result").innerText = "You cancelled the prompt or entered nothing.";
+    } else {
+        document.getElementById("result").innerText = "Hello, " + userName + "!";
+    }
+}
+    </script>
+</body>
+</html>
+
+
+
+
+
+
