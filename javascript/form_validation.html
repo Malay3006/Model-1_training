@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Contact Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #a29bfe;
+            box-shadow: 0 0 8px rgba(162, 155, 254, 0.4);
+        }
+
+        .error-msg {
+            color: #ff7675;
+            font-size: 0.75rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-group.invalid input {
+            border-color: #ff7675;
+        }
+
+        .form-group.invalid .error-msg {
+            display: block;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #a29bfe;
+            color: #2d3436;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background: #6c5ce7;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .success-banner {
+            display: none;
+            background: rgba(85, 239, 196, 0.2);
+            color: #55efc4;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 1px solid rgba(85, 239, 196, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="successBanner" class="success-banner">Message sent successfully!</div>
+        <h2>Join the Community</h2>
+        
+        <form id="registrationForm" novalidate>
+            <div class="form-group" id="nameGroup">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="John Doe">
+                <div class="error-msg">Name must be at least 3 characters.</div>
+            </div>
+
+            <div class="form-group" id="emailGroup">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="hello@example.com">
+                <div class="error-msg">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group" id="passwordGroup">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="••••••••">
+                <div class="error-msg">Password must be at least 8 characters.</div>
+            </div>
+
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const successBanner = document.getElementById('successBanner');
+
+        const validateEmail = (email) => {
+            return String(email)
+                .toLowerCase()
+                .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        };
+
+        const toggleError = (elementId, isValid) => {
+            const group = document.getElementById(elementId);
+            if (isValid) {
+                group.classList.remove('invalid');
+            } else {
+                group.classList.add('invalid');
+            }
+            return isValid;
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const isNameValid = toggleError('nameGroup', name.trim().length >= 3);
+            const isEmailValid = toggleError('emailGroup', validateEmail(email));
+            const isPasswordValid = toggleError('passwordGroup', password.length >= 8);
+
+            if (isNameValid && isEmailValid && isPasswordValid) {
+                successBanner.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    successBanner.style.display = 'none';
+                }, 4000);
+            }
+        });
+
+        const inputs = form.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const group = input.parentElement;
+                group.classList.remove('invalid');
+            });
+        });
+    </script>
+</body>
+</html>
