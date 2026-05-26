@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zebra Table</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .even {
+            background-color: lightgray;
+        }
+
+        .odd {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr><td>Row 1</td></tr>
+    <tr><td>Row 2</td></tr>
+    <tr><td>Row 3</td></tr>
+    <tr><td>Row 4</td></tr>
+</table>
+
+<script>
+$(document).ready(function(){
+
+    $("tr:even").addClass("even");
+    $("tr:odd").addClass("odd");
+
+});
+</script>
+
+</body>
+</html>
