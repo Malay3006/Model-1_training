@@ -2,15 +2,12 @@
 <html>
 <head>
     <title>Remove Row</title>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
     <style>
         table {
             border-collapse: collapse;
             width: 300px;
         }
-
         td {
             border: 1px solid black;
             padding: 10px;
@@ -18,7 +15,6 @@
     </style>
 </head>
 <body>
-
 <table>
     <tr id="row1">
         <td>John</td>
@@ -26,7 +22,6 @@
             <button class="delete">Delete</button>
         </td>
     </tr>
-
     <tr id="row2">
         <td>David</td>
         <td>
@@ -34,18 +29,12 @@
         </td>
     </tr>
 </table>
-
 <script>
 $(document).ready(function(){
-
     $(".delete").click(function(){
-
         $(this).closest("tr").remove();
-
     });
-
 });
 </script>
-
 </body>
 </html>
